@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewModels = "clr-namespace:LocationDemo.ViewModel"
+             xmlns:local="clr-namespace:LocationDemo.View" 
+             x:Class="LocationDemo.View.MainPage">
+    
+    <ContentPage.Content>
+        
+        <StackLayout VerticalOptions="FillAndExpand">
+            <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                <Label x:Name="labelName"
+                       Text="Enter Your Name: "
+                       FontSize="Medium"/>
+                <Entry x:Name="entryName"
+                       Text="{Binding Name, Mode=TwoWay}"
+                       HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+            <Button x:Name="buttonMain"
+                    Text="Go to Page 2"
+                    VerticalOptions="End"
+                    Command="{Binding NavigationCommand}"/>
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

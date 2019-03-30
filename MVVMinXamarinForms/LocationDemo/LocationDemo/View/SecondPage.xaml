@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels = "clr-namespace:LocationDemo.ViewModel"
+             xmlns:local = "clr-namespace:LocationDemo.View"
+             x:Class="LocationDemo.View.SecondPage">
+    
+    <ContentPage.Content>
+       <StackLayout>
+            <Label x:Name="labelWelcomeMessage"
+                   FontSize="Large"
+                   Text="{Binding WelcomeMessage, Mode=TwoWay}"
+                   VerticalOptions="StartAndExpand"/>
+            
+            <Label x:Name="LocationStatusLabel"
+                   Text="{Binding LocationStatus}"
+                   VerticalOptions="CenterAndExpand"/>
+            
+            <StackLayout Orientation="Horizontal">
+            <Button x:Name="CheckLocationStatus"
+                    VerticalOptions="Center"
+                    Text="Show Location Status"
+                    Command="{Binding ShowLocationStatus}"/>
+            <Button x:Name="ClearLocationStatus"
+                    VerticalOptions="Center"
+                    Text="Clear Location Status"
+                    Command="{Binding ClearLocationStatus}"/>
+            </StackLayout>
+            
+           <Button x:Name="button2"
+                    VerticalOptions="End"
+                    Text="Go to Main Page"
+                    Command="{Binding OpenMainPageCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
